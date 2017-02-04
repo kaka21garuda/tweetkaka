@@ -1,10 +1,24 @@
-from flask import Flask
+import random
+
+from flask import Flask, redirect, url_for, request
+from gen_histogram import histogram
+from sample import generate_probability, generate_word
 
 app = Flask(__name__)
 
+dict_histogram = histogram('tom_sawyer.txt')
+
+tes_list = ["one", "fish", "two", "fish", "red", "fish", "blue", "fish"]
+
+
+def try_random():
+    return random.choice(tes_list)
+
+
 @app.route('/')
-def index():
-    return "Hi"
+def hello_world():
+    return try_random()
+
 
 if __name__ == '__main__':
     app.run()
