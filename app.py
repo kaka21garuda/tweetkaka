@@ -9,7 +9,10 @@ from flask import Flask
 
 
 app = Flask(__name__)
-# app.debug = True
+
+words_list = word_array.list_token("tom_sawyer.txt")
+# make a Dictogram object which types dictionary
+histogram = dictogram.Dictogram(words_list)
 
 
 @app.route('/')
@@ -19,8 +22,5 @@ def hello_world():
 
 
 if __name__ == '__main__':
-    words_list = word_array.list_token("tom_sawyer.txt")
-    # make a Dictogram object which types dictionary
-    histogram = dictogram.Dictogram(words_list)
     # print histogram.frequency("jkdl")
     app.run(debug=True)
