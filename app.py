@@ -1,8 +1,8 @@
 import dictogram
-# import sample
+import sample
 import sentence
 import word_array
-# import word_count
+import word_count
 
 
 from flask import Flask
