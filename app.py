@@ -17,9 +17,14 @@ def hello_world():
     return sentence.generate_sentence(app.histogram)
 
 
-# if __name__ == '__main__':
-words_list = word_array.list_token("tom_sawyer.txt")
-# make a Dictogram object which types dictionary
-app.histogram = dictogram.Dictogram(words_list)
-# print histogram.frequency("jkdl")
-app.run()
+def create_histogram():
+    words_list = word_array.list_token("tom_sawyer.txt")
+    # make a Dictogram object which types dictionary
+    app.histogram = dictogram.Dictogram(words_list)
+
+
+create_histogram()
+
+
+if __name__ == '__main__':
+    app.run()
