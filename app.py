@@ -14,7 +14,8 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     # return sample.generate_word(histogram)
-    return sentence.generate_sentence(app.histogram)
+    # return sentence.generate_sentence(app.histogram)
+    return app.mar.gen_sent()
 
 
 def create_histogram():
@@ -23,8 +24,13 @@ def create_histogram():
     app.histogram = dictogram.Dictogram(words_list)
 
 
-create_histogram()
+def markov_sent():
+    words_list = word_array.list_token("tom_sawyer.txt")
+    app.mar = markov.Markov(words_list=words_list)
 
+
+create_histogram()
+markov_sent()
 
 if __name__ == '__main__':
     # This code only runs if you execute this script locally

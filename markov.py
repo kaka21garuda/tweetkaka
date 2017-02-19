@@ -25,7 +25,7 @@ class Markov(dict):
         arr = []
         curr_state = sample.generate_word(self.hist_freq)
 
-        for i in range(10):
+        for i in range(20):
             hist_next = dictogram.Dictogram(self[curr_state])
             next_choice = sample.generate_word(hist_next)
             curr_state = next_choice
@@ -33,8 +33,3 @@ class Markov(dict):
         #     pick_next = random.choice(self[curr_state])
         #     arr.append(pick_next)
         return " ".join(arr)
-
-
-lists = word_array.list_token("sawyer.txt")
-mar = Markov(words_list=lists)
-print mar.gen_sent()
