@@ -3,7 +3,7 @@ import sample
 import sentence
 import word_array
 import word_count
-
+import markov
 
 from flask import Flask
 
@@ -27,4 +27,5 @@ create_histogram()
 
 
 if __name__ == '__main__':
+    # This code only runs if you execute this script locally
     app.run()
