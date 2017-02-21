@@ -24,6 +24,7 @@ class Markov(dict):
     def gen_sent(self):
         arr = []
         curr_state = sample.generate_word(self.hist_freq)
+        arr.append(curr_state)
 
         for i in range(20):
             hist_next = dictogram.Dictogram(self[curr_state])
